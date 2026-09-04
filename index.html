@@ -1,141 +1,516 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="HTTrack is an easy-to-use website mirror utility. It allows you to download a World Wide website from the Internet to a local directory,building recursively all structures, getting html, images, and other files from the server to your computer. Links are rebuiltrelatively so that you can freely browse to the local site (works with any browser). You can mirror several sites together so that you can jump from one toanother. You can, also, update an existing mirror site, or resume an interrupted download. The robot is fully configurable, with an integrated help" />
-	<meta name="keywords" content="httrack, HTTRACK, HTTrack, winhttrack, WINHTTRACK, WinHTTrack, offline browser, web mirror utility, aspirateur web, surf offline, web capture, www mirror utility, browse offline, local  site builder, website mirroring, aspirateur www, internet grabber, capture de site web, internet tool, hors connexion, unix, dos, windows 95, windows 98, solaris, ibm580, AIX 4.0, HTS, HTGet, web aspirator, web aspirateur, libre, GPL, GNU, free software" />
-	<title>Local index - HTTrack Website Copier</title>
-  <!-- Mirror and index made by HTTrack Website Copier/3.50-0 [XR&CO] -->
-	<style type="text/css">
-	<!--
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corz Client — The Ultimate Minecraft Client</title>
+  <meta name="description" content="The most advanced Minecraft client. Undetected, instant updates, clean UI.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-weight='900'%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'Inter','Space Grotesk',sans-serif;
+      background:#0a0a12;
+      color:#e8e8f0;
+      line-height:1.6;
+      overflow-x:hidden;
+      min-height:100vh;
+      font-weight:400;
+      -webkit-font-smoothing:antialiased;
+    }
+    ::selection { background:#6c3cff; color:#fff; }
+    .minecraft-font { font-family:'Press Start 2P',monospace; letter-spacing:0.02em; }
+    .minecraft-font-sm { font-family:'Press Start 2P',monospace; font-size:0.6rem; letter-spacing:0.05em; }
 
-body {
-	margin: 0;  padding: 0;  margin-bottom: 15px;  margin-top: 8px;
-	background: #77b;
-}
-body, td {
-	font: 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-	}
+    ::-webkit-scrollbar { width:10px; }
+    ::-webkit-scrollbar-track { background:#0a0a12; }
+    ::-webkit-scrollbar-thumb { background:linear-gradient(180deg,#6c3cff,#a855f7); border-radius:100px; border:2px solid #0a0a12; }
 
-#subTitle {
-	background: #000;  color: #fff;  padding: 4px;  font-weight: bold; 
-	}
+    .wrap { max-width:1200px; margin:0 auto; padding:0 24px; position:relative; z-index:2; }
+    .gradient-text { background:linear-gradient(135deg,#a855f7,#6c3cff,#3b82f6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:800; }
+    .pixel-tag { font-family:'Press Start 2P',monospace; font-size:0.55rem; letter-spacing:0.1em; color:#6c3cff; background:rgba(108,60,255,0.12); padding:6px 16px; border-radius:100px; display:inline-block; border:1px solid rgba(108,60,255,0.2); text-transform:uppercase; }
+    .eyebrow-tag { font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; color:#6c3cff; background:rgba(108,60,255,0.08); padding:4px 14px; border-radius:100px; display:inline-block; margin-bottom:12px; border:1px solid rgba(108,60,255,0.15); text-transform:uppercase; font-weight:600; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:16px 36px; border-radius:100px; font-weight:700; font-size:1rem; text-decoration:none; transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1); border:none; cursor:pointer; position:relative; z-index:2; font-family:'Inter',sans-serif; }
+    .btn-primary { background:linear-gradient(135deg,#a855f7,#6c3cff); color:#fff; box-shadow:0 4px 30px rgba(108,60,255,0.4); }
+    .btn-primary:hover { transform:translateY(-3px) scale(1.03); box-shadow:0 8px 50px rgba(108,60,255,0.6); }
+    .btn-ghost { background:rgba(255,255,255,0.03); color:#c8c8e0; border:1px solid rgba(255,255,255,0.08); }
+    .btn-ghost:hover { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.25); transform:translateY(-2px); }
+    .btn-block { width:100%; justify-content:center; }
+    .section-head { text-align:center; max-width:720px; margin:0 auto 64px; }
+    .section-head h2 { font-size:2.8rem; font-weight:800; letter-spacing:-0.02em; line-height:1.15; margin-bottom:16px; }
+    .section-head p { color:#9898b0; font-size:1.1rem; font-weight:400; }
 
-#siteNavigation a, #siteNavigation .current {
-	font-weight: bold;  color: #448;
-	}
-#siteNavigation a:link    { text-decoration: none; }
-#siteNavigation a:visited { text-decoration: none; }
+    @keyframes fade-up { 0% { opacity:0; transform:translateY(50px) scale(0.96); } 100% { opacity:1; transform:translateY(0) scale(1); } }
+    @keyframes glow-pulse { 0%,100% { box-shadow:0 0 30px rgba(108,60,255,0.05); } 50% { box-shadow:0 0 80px rgba(108,60,255,0.2); } }
+    @keyframes float { 0%,100% { transform:translateY(0px); } 50% { transform:translateY(-18px); } }
+    @keyframes pulse-ring { 0% { transform:scale(1); opacity:0.8; } 100% { transform:scale(2.5); opacity:0; } }
+    @keyframes bedrock-scroll { 0% { background-position:0 0; } 100% { background-position:0 60px; } }
+    @keyframes orb-float { 0% { transform:translate(0,0) scale(1) rotate(0deg); } 25% { transform:translate(80px,-60px) scale(1.1) rotate(5deg); } 50% { transform:translate(-50px,70px) scale(0.9) rotate(-5deg); } 75% { transform:translate(60px,40px) scale(1.05) rotate(3deg); } 100% { transform:translate(-60px,-40px) scale(1) rotate(0deg); } }
+    @keyframes enderman-warp { 0% { opacity:0; transform:scale(0.3) rotate(20deg) translateY(20px); } 20% { opacity:1; transform:scale(1.2) rotate(-10deg) translateY(-10px); } 40% { opacity:1; transform:scale(1) rotate(5deg) translateY(0); } 70% { opacity:0; transform:scale(0.6) rotate(30deg) translateY(-30px); } 100% { opacity:0; transform:scale(0) rotate(45deg) translateY(-50px); } }
+    @keyframes enderman-float { 0%,100% { transform:translateY(0px) rotate(0deg); } 25% { transform:translateY(-12px) rotate(-3deg); } 75% { transform:translateY(-4px) rotate(3deg); } }
+    @keyframes particle-fall { 0% { transform:translateY(-10vh) rotate(0deg) scale(1); opacity:0.7; } 100% { transform:translateY(110vh) rotate(720deg) scale(0.2); opacity:0; } }
+    .reveal { opacity:0; animation:fade-up 0.9s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+    .reveal:nth-child(1) { animation-delay:0.05s; }
+    .reveal:nth-child(2) { animation-delay:0.15s; }
+    .reveal:nth-child(3) { animation-delay:0.25s; }
+    .reveal:nth-child(4) { animation-delay:0.35s; }
+    .reveal:nth-child(5) { animation-delay:0.45s; }
+    .reveal:nth-child(6) { animation-delay:0.55s; }
 
-#siteNavigation .current { background-color: #ccd; }
+    .particle-container { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1; overflow:hidden; }
+    .particle { position:absolute; top:-20px; width:8px; height:8px; background:radial-gradient(circle,#a855f7,#6c3cff); border-radius:50%; opacity:0.6; animation:particle-fall linear infinite; box-shadow:0 0 12px rgba(108,60,255,0.3); }
+    .particle:nth-child(odd) { width:6px; height:6px; background:radial-gradient(circle,#c084fc,#8b5cf6); box-shadow:0 0 16px rgba(139,92,246,0.4); }
+    .particle:nth-child(3n) { width:10px; height:10px; background:radial-gradient(circle,#7c3aed,#4f46e5); box-shadow:0 0 20px rgba(124,58,237,0.3); }
 
-#siteNavigation a:hover   { text-decoration: none;  background-color: #fff;  color: #000; }
-#siteNavigation a:active  { text-decoration: none;  background-color: #ccc; }
+    .bedrock-layer { position:fixed; bottom:0; left:0; width:100%; height:140px; z-index:1; pointer-events:none; background:repeating-linear-gradient(0deg,#2a2a3a 0px,#2a2a3a 4px,#1a1a2a 4px,#1a1a2a 8px,#3a3a4a 8px,#3a3a4a 12px,#1a1a2a 12px,#1a1a2a 16px,#2a2a3a 16px,#2a2a3a 20px); background-size:100% 20px; animation:bedrock-scroll 6s linear infinite; mask-image:linear-gradient(to top,rgba(0,0,0,1) 15%,rgba(0,0,0,0) 100%); -webkit-mask-image:linear-gradient(to top,rgba(0,0,0,1) 15%,rgba(0,0,0,0) 100%); opacity:0.5; }
 
+    .bg-canvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; overflow:hidden; }
+    .bg-canvas .orb { position:absolute; border-radius:50%; filter:blur(130px); opacity:0.4; animation:orb-float 30s ease-in-out infinite alternate; }
+    .bg-canvas .orb:nth-child(1) { width:750px; height:750px; top:-300px; left:-300px; background:radial-gradient(circle,#6c3cff,#3b82f6); animation-duration:32s; }
+    .bg-canvas .orb:nth-child(2) { width:650px; height:650px; bottom:-250px; right:-250px; background:radial-gradient(circle,#a855f7,#6c3cff); animation-duration:28s; animation-delay:-6s; }
+    .bg-canvas .orb:nth-child(3) { width:550px; height:550px; top:25%; left:35%; background:radial-gradient(circle,#4f46e5,#7c3aed); animation-duration:26s; animation-delay:-12s; opacity:0.25; }
+    .bg-canvas .orb:nth-child(4) { width:450px; height:450px; bottom:15%; left:5%; background:radial-gradient(circle,#8b5cf6,#6366f1); animation-duration:22s; animation-delay:-4s; opacity:0.25; }
+    .bg-canvas .orb:nth-child(5) { width:600px; height:600px; top:0%; right:5%; background:radial-gradient(circle,#7c3aed,#4f46e5); animation-duration:34s; animation-delay:-10s; opacity:0.25; }
 
-a:link    { text-decoration: underline;  color: #00f; }
-a:visited { text-decoration: underline;  color: #000; }
-a:hover   { text-decoration: underline;  color: #c00; }
-a:active  { text-decoration: underline; }
+    .bg-grid { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; background-image:linear-gradient(rgba(108,60,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(108,60,255,0.03) 1px,transparent 1px); background-size:60px 60px; }
+    .noise { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; opacity:0.015; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); }
 
-#pageContent {
-	clear: both;
-	border-bottom: 6px solid #000;
-	padding: 10px;  padding-top: 20px;
-	line-height: 1.65em;
-	background-image: url(backblue.gif);
-	background-repeat: no-repeat;
-	background-position: top right;
-	}
+    .enderman-container { position:fixed; bottom:120px; right:40px; z-index:50; cursor:pointer; user-select:none; filter:drop-shadow(0 0 30px rgba(108,60,255,0.3)); transition:filter 0.3s ease; }
+    .enderman-container:hover { filter:drop-shadow(0 0 50px rgba(108,60,255,0.6)); }
+    .enderman-entity { font-size:3.6rem; line-height:1; display:block; animation:enderman-float 2.5s ease-in-out infinite; transition:transform 0.3s ease; }
+    .enderman-container:hover .enderman-entity { transform:scale(1.1); }
+    .enderman-container.warp .enderman-entity { animation:enderman-warp 1s ease forwards; }
 
-#pageContent, #siteNavigation {
-	background-color: #ccd;
-	}
+    .site-header { position:fixed; top:0; left:0; width:100%; z-index:100; padding:12px 0; background:rgba(10,10,18,0.85); backdrop-filter:blur(20px); border-bottom:1px solid rgba(255,255,255,0.04); transition:all 0.4s ease; }
+    .site-header.scrolled { background:rgba(10,10,18,0.95); box-shadow:0 4px 40px rgba(0,0,0,0.5); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:800; text-decoration:none; color:#fff; font-family:'Space Grotesk',sans-serif; letter-spacing:-0.02em; }
+    .brand-mark { background:linear-gradient(135deg,#a855f7,#6c3cff); width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:12px; font-size:1.6rem; font-weight:900; color:#fff; box-shadow:0 4px 25px rgba(108,60,255,0.35); font-family:'Space Grotesk',sans-serif; transition:all 0.4s ease; }
+    .brand-undetected { font-size:0.5rem; font-weight:600; color:#28c840; background:rgba(40,200,64,0.12); padding:2px 10px; border-radius:100px; letter-spacing:0.05em; text-transform:uppercase; font-family:'JetBrains Mono',monospace; border:1px solid rgba(40,200,64,0.15); margin-left:4px; }
+    .desktop-nav { display:flex; gap:28px; align-items:center; }
+    .desktop-nav a { color:#b0b0c8; text-decoration:none; font-size:0.85rem; font-weight:600; transition:color 0.2s; cursor:pointer; position:relative; }
+    .desktop-nav a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:#6c3cff; transition:width 0.3s ease; }
+    .desktop-nav a:hover { color:#fff; }
+    .desktop-nav a:hover::after { width:100%; }
+    .nav-discord { background:#5865f2; padding:8px 22px; border-radius:100px; color:#fff; text-decoration:none; font-weight:700; font-size:0.85rem; transition:all 0.3s; font-family:'Inter',sans-serif; }
+    .nav-discord:hover { background:#4752c4; transform:scale(1.05); box-shadow:0 4px 25px rgba(88,101,242,0.4); }
+    .menu-btn { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
+    .menu-btn span { width:28px; height:2px; background:#fff; border-radius:4px; transition:0.3s; }
+    .mobile-menu { display:none; flex-direction:column; gap:16px; padding:24px; background:#12121a; border-bottom:1px solid rgba(255,255,255,0.05); position:absolute; top:100%; left:0; width:100%; }
+    .mobile-menu a { color:#e0e0f0; text-decoration:none; font-size:1rem; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); cursor:pointer; font-weight:600; }
+    .mobile-menu a:last-child { border-bottom:none; }
+    @media(max-width:768px) { .desktop-nav, .nav-discord { display:none; } .menu-btn { display:flex; } .mobile-menu.open { display:flex; } }
 
+    .hero { padding:150px 0 80px; position:relative; z-index:2; }
+    .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+    .hero-copy .pixel-tag { margin-bottom:16px; }
+    .hero-copy .eyebrow { font-size:0.8rem; color:#80809a; display:flex; align-items:center; gap:10px; margin-bottom:12px; font-weight:500; }
+    .status-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:#28c840; animation:pulse-ring 1.8s infinite; }
+    .hero-copy h1 { font-size:4rem; font-weight:900; line-height:1.05; letter-spacing:-0.02em; margin-bottom:20px; }
+    .hero-lead { font-size:1.15rem; color:#a0a0b8; max-width:480px; margin-bottom:32px; font-weight:400; }
+    .hero-actions { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:20px; }
+    .hero-note { font-size:0.75rem; color:#60607a; font-weight:400; }
+    .hero-mini-stats { display:flex; gap:40px; margin-top:32px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.06); }
+    .hero-mini-stats strong { display:block; font-size:1.8rem; font-weight:800; font-family:'JetBrains Mono',monospace; background:linear-gradient(135deg,#a855f7,#6c3cff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero-mini-stats span { font-size:0.75rem; color:#80809a; font-weight:500; }
+    .hero-preview { display:flex; justify-content:center; align-items:center; position:relative; }
+    .preview-card { background:#12121a; border-radius:24px; padding:18px; border:1px solid rgba(255,255,255,0.06); width:100%; max-width:540px; box-shadow:0 20px 80px rgba(0,0,0,0.5); animation:glow-pulse 4s ease-in-out infinite; position:relative; z-index:2; }
+    .window-bar { display:flex; justify-content:space-between; align-items:center; padding:6px 10px 10px 10px; font-family:'JetBrains Mono',monospace; font-size:0.6rem; color:#6c6c8a; font-weight:600; }
+    .window-dots { display:flex; gap:6px; }
+    .window-dots i { display:block; width:10px; height:10px; border-radius:50%; background:#6c6c8a; }
+    .window-dots i:nth-child(1) { background:#ff5f5f; }
+    .window-dots i:nth-child(2) { background:#ffbd2e; }
+    .window-dots i:nth-child(3) { background:#28c840; }
+    .live-pill { display:flex; align-items:center; gap:6px; background:rgba(40,200,64,0.15); padding:2px 12px; border-radius:100px; color:#28c840; font-size:0.55rem; font-weight:700; }
+    .live-pill b { display:block; width:6px; height:6px; border-radius:50%; background:#28c840; animation:pulse-ring 1.5s infinite; }
 
-.imgLeft  { float: left;   margin-right: 10px;  margin-bottom: 10px; }
-.imgRight { float: right;  margin-left: 10px;   margin-bottom: 10px; }
+    .gui-preview { background:#0d0d17; border-radius:14px; padding:14px; display:grid; grid-template-columns:180px 1fr; gap:14px; min-height:300px; font-family:'Inter',sans-serif; }
+    .gui-sidebar { background:#0a0a12; border-radius:10px; padding:12px 10px; display:flex; flex-direction:column; gap:6px; }
+    .gui-sidebar .logo { font-family:'Press Start 2P',monospace; font-size:0.7rem; color:#6c3cff; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.05); margin-bottom:6px; }
+    .gui-sidebar .logo small { font-size:0.5rem; color:#6c6c8a; display:block; font-family:'Inter',sans-serif; }
+    .gui-sidebar .menu-item { font-size:0.65rem; color:#9898b0; padding:4px 8px; border-radius:6px; cursor:pointer; transition:0.2s; font-weight:500; }
+    .gui-sidebar .menu-item.active { background:rgba(108,60,255,0.15); color:#c8c8e0; }
+    .gui-sidebar .menu-item:hover { background:rgba(255,255,255,0.05); }
+    .gui-sidebar .menu-item.bold { font-weight:600; color:#b0b0c8; }
+    .gui-sidebar .menu-item .badge { float:right; font-size:0.5rem; color:#6c3cff; background:rgba(108,60,255,0.12); padding:1px 8px; border-radius:100px; }
+    .gui-main { display:flex; flex-direction:column; gap:8px; }
+    .gui-header { display:flex; justify-content:space-between; align-items:center; padding-bottom:6px; border-bottom:1px solid rgba(255,255,255,0.04); }
+    .gui-header .greeting { font-size:0.7rem; font-weight:600; color:#c8c8e0; }
+    .gui-header .greeting small { color:#6c6c8a; font-weight:400; }
+    .gui-header .time { font-size:0.6rem; color:#6c6c8a; font-family:'JetBrains Mono',monospace; }
+    .gui-modules { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
+    .gui-module { display:flex; justify-content:space-between; align-items:center; padding:5px 8px; background:rgba(255,255,255,0.02); border-radius:6px; font-size:0.6rem; color:#9898b0; border:1px solid transparent; transition:0.2s; }
+    .gui-module.active { border-color:rgba(108,60,255,0.2); background:rgba(108,60,255,0.04); }
+    .gui-module .keybind { font-size:0.45rem; color:#4a4a62; font-family:'JetBrains Mono',monospace; background:rgba(255,255,255,0.04); padding:1px 8px; border-radius:4px; }
+    .gui-module .locked { color:#6c3cff; font-size:0.5rem; }
+    .gui-footer { display:flex; justify-content:space-between; padding-top:8px; border-top:1px solid rgba(255,255,255,0.04); font-size:0.5rem; color:#6c6c8a; font-family:'JetBrains Mono',monospace; }
+    .gui-footer .status { color:#28c840; }
 
-hr { height: 1px;  color: #000;  background-color: #000;  margin-bottom: 15px; }
+    .floating-card { position:absolute; background:rgba(18,18,26,0.88); backdrop-filter:blur(12px); padding:8px 18px; border-radius:100px; border:1px solid rgba(255,255,255,0.06); font-size:0.65rem; font-family:'JetBrains Mono',monospace; color:#c8c8e0; animation:float 3s ease-in-out infinite; box-shadow:0 8px 30px rgba(0,0,0,0.3); font-weight:600; }
+    .fc-one { top:-10px; right:-10px; animation-delay:0.5s; }
+    .fc-one .pulse { display:inline-block; width:6px; height:6px; border-radius:50%; background:#28c840; margin-right:6px; animation:pulse-ring 1.8s infinite; }
+    .fc-two { bottom:10px; left:-20px; animation-delay:1s; }
 
-h1 { margin: 0;  font-weight: bold;  font-size: 2em; }
-h2 { margin: 0;  font-weight: bold;  font-size: 1.6em; }
-h3 { margin: 0;  font-weight: bold;  font-size: 1.3em; }
-h4 { margin: 0;  font-weight: bold;  font-size: 1.18em; }
+    .stat-strip { padding:50px 0; border-top:1px solid rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.015); position:relative; z-index:2; }
+    .stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
+    .stat-grid strong { display:block; font-size:2.6rem; font-weight:800; font-family:'JetBrains Mono',monospace; background:linear-gradient(135deg,#a855f7,#6c3cff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .stat-grid span { color:#80809a; font-size:0.85rem; font-weight:500; }
 
-.blak { background-color: #000; }
-.hide { display: none; }
-.tableWidth { min-width: 400px; }
+    #features { padding:80px 0; position:relative; z-index:2; }
+    .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+    .feature-card { background:#12121a; padding:32px 28px; border-radius:24px; border:1px solid rgba(255,255,255,0.04); transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+    .feature-card:hover { border-color:rgba(108,60,255,0.3); transform:translateY(-8px); box-shadow:0 20px 60px rgba(0,0,0,0.3); }
+    .feature-icon { font-size:2.2rem; margin-bottom:12px; display:block; }
+    .feature-label { font-family:'JetBrains Mono',monospace; font-size:0.6rem; color:#6c3cff; display:block; margin-bottom:8px; letter-spacing:0.05em; font-weight:700; }
+    .feature-card h3 { font-size:1.2rem; font-weight:700; margin-bottom:8px; }
+    .feature-card p { color:#9898b0; font-size:0.85rem; margin-bottom:16px; font-weight:400; }
+    .feature-list { display:flex; flex-wrap:wrap; gap:6px; }
+    .feature-list span { background:rgba(108,60,255,0.08); padding:4px 14px; border-radius:100px; font-size:0.65rem; color:#b0b0c8; font-weight:500; }
 
-.tblRegular       { border-collapse: collapse; }
-.tblRegular td    { padding: 6px;  background-image: url(fade.gif);  border: 2px solid #99c; }
-.tblHeaderColor, .tblHeaderColor td { background: #99c; }
-.tblNoBorder td   { border: 0; }
+    .section-alt { background:rgba(14,14,22,0.5); backdrop-filter:blur(4px); padding:80px 0; position:relative; z-index:2; }
+    .tabs { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:40px; }
+    .tab { background:transparent; border:1px solid rgba(255,255,255,0.06); padding:10px 28px; border-radius:100px; color:#b0b0c8; font-weight:600; cursor:pointer; transition:all 0.3s ease; font-family:'Inter',sans-serif; font-size:0.85rem; }
+    .tab.active { background:#6c3cff; color:#fff; border-color:#6c3cff; box-shadow:0 4px 25px rgba(108,60,255,0.3); }
+    .tab:hover { border-color:rgba(255,255,255,0.2); }
+    .clip-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+    .clip-card { background:#12121a; border-radius:24px; overflow:hidden; border:1px solid rgba(255,255,255,0.04); transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1); position:relative; }
+    .clip-card:hover { transform:translateY(-6px); border-color:rgba(108,60,255,0.2); }
+    .clip-card video { width:100%; height:220px; object-fit:cover; display:block; background:#0a0a0f; }
+    .clip-overlay { position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; gap:16px; background:rgba(0,0,0,0.4); opacity:0; transition:0.3s; }
+    .clip-card:hover .clip-overlay { opacity:1; }
+    .play-btn { width:60px; height:60px; border-radius:50%; background:#6c3cff; border:none; color:#fff; font-size:1.5rem; cursor:pointer; transition:all 0.3s; box-shadow:0 4px 30px rgba(108,60,255,0.4); }
+    .play-btn:hover { transform:scale(1.15); box-shadow:0 8px 50px rgba(108,60,255,0.6); }
+    .clip-info { padding:16px 20px; }
+    .clip-info b { display:block; font-size:1rem; font-weight:700; }
+    .clip-info small { color:#80809a; font-size:0.8rem; font-weight:500; }
 
+    .dashboard-grid { display:grid; grid-template-columns:1fr 1fr; gap:50px; padding:80px 0; align-items:center; position:relative; z-index:2; }
+    .dashboard-copy h2 { font-size:2.8rem; font-weight:800; line-height:1.15; margin-bottom:16px; }
+    .dashboard-copy p { color:#9898b0; font-size:1.05rem; font-weight:400; }
+    .activity-list { margin-top:32px; }
+    .activity-list>div { display:flex; align-items:center; gap:16px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.04); }
+    .activity-icon { font-size:1.2rem; color:#6c3cff; }
+    .activity-list b { display:block; font-size:0.95rem; font-weight:700; }
+    .activity-list small { color:#80809a; font-size:0.8rem; font-weight:400; }
+    .activity-list em { margin-left:auto; color:#50506a; font-style:normal; font-size:0.75rem; font-weight:500; }
+    .dashboard-card { background:#12121a; padding:32px; border-radius:28px; border:1px solid rgba(255,255,255,0.04); transition:all 0.4s ease; }
+    .dash-top { display:flex; justify-content:space-between; font-size:0.65rem; color:#6c6c8a; font-family:'JetBrains Mono',monospace; font-weight:600; }
+    .live-pill-sm { display:flex; align-items:center; gap:6px; background:rgba(40,200,64,0.12); padding:2px 14px; border-radius:100px; color:#28c840; font-weight:700; }
+    .live-pill-sm b { display:block; width:6px; height:6px; border-radius:50%; background:#28c840; animation:pulse-ring 1.5s infinite; }
+    .online-number { margin:20px 0; }
+    .online-number strong { font-size:3.4rem; font-family:'JetBrains Mono',monospace; display:block; background:linear-gradient(135deg,#a855f7,#6c3cff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:800; }
+    .online-number span { color:#80809a; font-size:0.9rem; font-weight:500; }
+    .bars { display:flex; align-items:flex-end; gap:5px; height:60px; margin:16px 0; }
+    .bars i { flex:1; background:#6c3cff; border-radius:6px 6px 0 0; opacity:0.4; transition:all 0.3s; }
+    .bars i:hover { opacity:1; transform:scaleY(1.05); }
+    .dash-footer { display:flex; justify-content:space-between; font-size:0.8rem; color:#80809a; border-top:1px solid rgba(255,255,255,0.04); padding-top:16px; font-weight:500; }
+    .dash-footer b { color:#28c840; font-weight:700; }
 
-// -->
-</style>
+    .download-box { display:flex; justify-content:space-between; align-items:center; background:linear-gradient(135deg,#12121a,#1a0a2a); padding:48px 56px; border-radius:32px; border:1px solid rgba(108,60,255,0.12); position:relative; z-index:2; transition:all 0.4s ease; box-shadow:0 20px 60px rgba(0,0,0,0.4); }
+    .download-box h2 { font-size:2rem; font-weight:800; }
+    .download-box p { color:#9898b0; font-weight:400; }
+    .download-actions { display:flex; gap:16px; }
 
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:40px; position:relative; z-index:2; }
+    .step { background:#12121a; padding:32px 24px; border-radius:24px; border:1px solid rgba(255,255,255,0.04); text-align:center; transition:all 0.4s ease; }
+    .step:hover { border-color:rgba(108,60,255,0.2); transform:translateY(-4px); }
+    .step span { font-family:'JetBrains Mono',monospace; font-size:2rem; color:#6c3cff; opacity:0.4; display:block; margin-bottom:8px; font-weight:700; }
+    .step h3 { font-size:1.2rem; font-weight:700; margin-bottom:8px; }
+    .step p { color:#9898b0; font-size:0.9rem; font-weight:400; }
+
+    .pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:820px; margin:0 auto; position:relative; z-index:2; }
+    .price-card { background:#12121a; padding:36px 32px; border-radius:28px; border:1px solid rgba(255,255,255,0.04); text-align:center; transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1); position:relative; }
+    .price-card:hover { transform:translateY(-6px); border-color:rgba(108,60,255,0.2); }
+    .price-card.featured { border-color:#6c3cff; box-shadow:0 0 50px rgba(108,60,255,0.12); }
+    .popular { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#6c3cff; padding:4px 24px; border-radius:100px; font-size:0.65rem; font-weight:700; text-transform:uppercase; color:#fff; font-family:'JetBrains Mono',monospace; letter-spacing:0.05em; }
+    .plan-kicker { font-family:'JetBrains Mono',monospace; font-size:0.6rem; color:#6c6c8a; letter-spacing:0.05em; font-weight:600; }
+    .price-card h3 { font-size:1.6rem; font-weight:700; margin:8px 0 4px; }
+    .price { font-size:3rem; font-weight:800; margin:12px 0; }
+    .price small { font-size:1rem; font-weight:500; color:#80809a; }
+    .price-card p { color:#9898b0; font-size:0.9rem; margin-bottom:20px; font-weight:400; }
+    .price-card ul { text-align:left; margin:24px 0; list-style:none; }
+    .price-card ul li { padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.03); color:#b0b0c8; display:flex; align-items:center; gap:12px; font-size:0.9rem; font-weight:500; }
+    .price-card ul li::before { content:'✓'; color:#28c840; font-weight:700; }
+
+    .changelog { max-width:800px; margin:0 auto; position:relative; z-index:2; }
+    .release { display:grid; grid-template-columns:160px 1fr 80px; gap:24px; padding:20px 0; border-bottom:1px solid rgba(255,255,255,0.04); align-items:center; }
+    .version { font-weight:700; font-family:'JetBrains Mono',monospace; }
+    .release-date { font-size:0.7rem; color:#6c6c8a; display:block; font-weight:500; }
+    .release h3 { font-size:1rem; font-weight:700; }
+    .release p { color:#9898b0; font-size:0.9rem; font-weight:400; }
+    .release b { color:#6c3cff; font-size:0.65rem; font-family:'JetBrains Mono',monospace; background:rgba(108,60,255,0.1); padding:2px 12px; border-radius:100px; font-weight:700; }
+
+    .faq-list { max-width:720px; margin:0 auto; position:relative; z-index:2; }
+    .faq { background:#12121a; border-radius:20px; padding:20px 28px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.04); transition:all 0.3s ease; }
+    .faq:hover { border-color:rgba(108,60,255,0.15); }
+    .faq summary { font-weight:700; font-size:1.05rem; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; }
+    .faq summary::-webkit-details-marker { display:none; }
+    .faq summary::after { content:'+'; font-size:1.6rem; color:#6c3cff; transition:0.3s; }
+    .faq[open] summary::after { content:'−'; }
+    .faq p { margin-top:16px; color:#a0a0b8; padding-right:20px; font-weight:400; }
+
+    .final-cta { padding:80px 0; position:relative; z-index:2; }
+    .cta-box { background:linear-gradient(135deg,#12121a,#1a0a2a); padding:64px 48px; border-radius:36px; text-align:center; border:1px solid rgba(108,60,255,0.15); position:relative; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.4); }
+    .cta-rings { position:absolute; width:500px; height:500px; border-radius:50%; border:1px solid rgba(108,60,255,0.06); top:-150px; right:-150px; }
+    .cta-rings::after { content:''; position:absolute; width:350px; height:350px; border-radius:50%; border:1px solid rgba(108,60,255,0.04); top:75px; left:75px; }
+    .cta-box h2 { font-size:3rem; font-weight:800; margin:16px 0; }
+    .cta-box p { color:#a0a0b8; font-size:1.1rem; margin-bottom:32px; font-weight:400; }
+    .cta-box .hero-actions { justify-content:center; }
+
+    .footer { border-top:1px solid rgba(255,255,255,0.04); padding:48px 0 24px; background:rgba(8,8,12,0.9); backdrop-filter:blur(8px); position:relative; z-index:2; }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; padding-bottom:32px; }
+    .footer-grid .brand { font-size:1.2rem; }
+    .footer-grid p { color:#80809a; font-size:0.9rem; margin-top:8px; max-width:280px; font-weight:400; }
+    .footer-grid b { display:block; margin-bottom:12px; font-size:0.9rem; color:#c8c8e0; font-weight:700; }
+    .footer-grid a { display:block; color:#80809a; text-decoration:none; padding:4px 0; font-size:0.9rem; transition:all 0.2s; cursor:pointer; font-weight:500; }
+    .footer-grid a:hover { color:#fff; transform:translateX(4px); }
+    .footer-bottom { display:flex; justify-content:space-between; padding-top:24px; border-top:1px solid rgba(255,255,255,0.04); font-size:0.8rem; color:#50506a; font-weight:400; }
+
+    @media(max-width:992px) { .hero-grid { grid-template-columns:1fr; } .hero-copy h1 { font-size:3rem; } .clip-grid { grid-template-columns:1fr 1fr; } .dashboard-grid { grid-template-columns:1fr; } .feature-grid { grid-template-columns:1fr 1fr; } .gui-preview { grid-template-columns:1fr; } .gui-sidebar { display:grid; grid-template-columns:repeat(auto-fit,minmax(80px,1fr)); gap:4px; padding:10px; } .gui-sidebar .logo { grid-column:1/-1; } }
+    @media(max-width:768px) { .feature-grid, .pricing-grid, .steps, .clip-grid, .footer-grid { grid-template-columns:1fr; } .clip-grid { grid-template-columns:1fr; } .download-box { flex-direction:column; gap:24px; text-align:center; padding:32px 24px; } .release { grid-template-columns:1fr; gap:8px; } .hero-copy h1 { font-size:2.2rem; } .stat-grid { grid-template-columns:1fr 1fr; } .section-head h2 { font-size:2rem; } .cta-box h2 { font-size:2rem; } .pricing-grid { max-width:400px; } .floating-card { display:none; } .enderman-container { bottom:80px; right:20px; } .enderman-entity { font-size:2.8rem; } .gui-preview { grid-template-columns:1fr; } .gui-modules { grid-template-columns:1fr; } }
+  </style>
 </head>
-
 <body>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="3" class="tableWidth">
-	<tr>
-	<td id="subTitle">HTTrack Website Copier - Open Source offline browser</td>
-	</tr>
-</table>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="0" class="tableWidth">
-<tr class="blak">
-<td>
-	<table width="100%" border="0" align="center" cellspacing="1" cellpadding="0">
-	<tr>
-	<td colspan="6"> 
-		<table width="100%" border="0" align="center" cellspacing="0" cellpadding="10">
-		<tr> 
-		<td id="pageContent"> 
-<!-- ==================== End prologue ==================== -->
 
-<H1 ALIGN=Center>Index of locally available sites:</H1>
-	<TABLE BORDER="0" WIDTH="100%" CELLSPACING="1" CELLPADDING="0">
-		<TR>
-			<TD BACKGROUND="fade.gif">
-				&middot;
-					<A HREF="www.corz.gg/index.html">
-						Corz Client — Anarchy &amp; PvP Client for Minecraft
-					</A>		
-			</TD>
-		</TR>
-	</TABLE>
-	<BR>
-	<BR>
-	<BR>
-  	<H6 ALIGN="RIGHT">
-	<I>Mirror and index made by HTTrack Website Copier [XR&amp;CO]</I>
-	</H6>
-	<!-- Mirror and index made by HTTrack Website Copier/3.50-0 [XR&CO] -->
-	<!-- Thanks for using HTTrack Website Copier! -->
-	<meta HTTP-EQUIV="Refresh" CONTENT="0; URL=www.corz.gg/index.html">
+<div class="particle-container" id="particleContainer"></div>
 
+<div class="bg-canvas"><div class="orb"></div><div class="orb"></div><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
+<div class="bg-grid"></div>
+<div class="noise"></div>
+<div class="bedrock-layer"></div>
 
-<!-- ==================== Start epilogue ==================== -->
-		</td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-	</table>
-</td>
-</tr>
-</table>
+<div class="enderman-container" id="endermanContainer" title="Enderman">
+  <span class="enderman-entity" id="endermanEntity">👾</span>
+</div>
 
-<table width="76%" border="0" align="center" valign="bottom" cellspacing="0" cellpadding="0">
-	<tr>
-	<td id="footer"><small>&copy; 1998 Xavier Roche &amp; other contributors - Web Design: Leto Kauler.</small></td>
-	</tr>
-</table>
+<header class="site-header" id="siteHeader">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="brand-mark">C</span><span>Corz</span><span class="brand-undetected">undetected</span></a>
+    <nav class="desktop-nav">
+      <a href="#features">Features</a><a href="#showcase">Showcase</a><a href="#stats">Stats</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="nav-discord" href="#" id="discordNav">Discord</a>
+    <button class="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features">Features</a><a href="#showcase">Showcase</a><a href="#stats">Stats</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#" id="mobileDiscord">Discord</a>
+  </div>
+</header>
 
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <div class="pixel-tag">CORZ // CLIENT v1.0</div>
+      <div class="eyebrow"><span class="status-dot"></span> Updated for 1.21.11</div>
+      <h1>The Ultimate<br><span class="gradient-text">Minecraft Client</span></h1>
+      <p class="hero-lead">The most advanced Minecraft client ever engineered. Instant updates, clean UI, and complete control.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#download">Download Corz</a><a class="btn btn-ghost" href="#showcase">Watch clips</a></div>
+      <p class="hero-note">Windows · Java Edition · Check server rules before use</p>
+      <div class="hero-mini-stats"><div><strong>4.6</strong><span>on Trustpilot · 147 reviews</span></div><div><strong>48</strong><span>modules</span></div><div><strong>24/7</strong><span>Support</span></div></div>
+    </div>
+    <div class="hero-preview reveal">
+      <div class="preview-card">
+        <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span>corz://gui</span><span class="live-pill"><b></b> LIVE</span></div>
+        <div class="gui-preview">
+          <div class="gui-sidebar">
+            <div class="logo">CORZ <small>v1.0.0</small></div>
+            <div class="menu-item bold">MODULES</div>
+            <div class="menu-item active">Combat</div><div class="menu-item">Movement</div><div class="menu-item">DonutSMP</div><div class="menu-item">Visuals</div><div class="menu-item">Misc</div>
+            <div class="menu-item bold" style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.04);">GENERAL</div>
+            <div class="menu-item">Settings</div><div class="menu-item">Configs</div><div class="menu-item">Theme</div><div class="menu-item">Socials</div>
+            <div class="menu-item bold" style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.04);">CORZ</div>
+            <div class="menu-item">Lifetime <span class="badge">✓</span></div>
+          </div>
+          <div class="gui-main">
+            <div class="gui-header"><span class="greeting">Hello, Corz <small>19:05</small></span><span class="time">⌘K</span></div>
+            <div class="gui-modules">
+              <div class="gui-module active"><span>Anchor Macro</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>Auto Crystal</span><span class="keybind">🎵</span></div>
+              <div class="gui-module active"><span>Auto Totem</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>Crystal Optimizer</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>Aim Assist</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>Silent Aim</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>Reach</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>AutoTrap</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>AutoClicker</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>Trigger Bot</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>Safe Anchor</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>Auto XP</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>Auto Refill Hotbar</span><span class="keybind">🎵</span></div>
+              <div class="gui-module"><span>Auto Inventory Totem</span><span class="keybind">🎵</span></div>
+            </div>
+            <div class="gui-footer"><span>CorzClient</span><span class="status">● Licensed (Lifetime)</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="floating-card fc-one"><span class="pulse"></span> 1,284 online now</div>
+      <div class="floating-card fc-two">⚡ 0.8 ms UI response</div>
+    </div>
+  </div>
+</section>
+
+<section class="stat-strip" id="stats">
+  <div class="wrap stat-grid">
+    <div><strong>1,284</strong><span>community players</span></div><div><strong>48</strong><span>modules & tools</span></div><div><strong>99%</strong><span>positive feedback*</span></div><div><strong>24/7</strong><span>community support</span></div>
+  </div>
+  <p class="micro-note" style="text-align:center;margin-top:16px;font-size:0.65rem;color:#50506a;">*Based on community feedback · Replace with verified numbers</p>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow-tag">01 / FEATURES</span><h2>Everything you need.<br><span class="gradient-text">Nothing in the way.</span></h2><p>Organized into focused categories so your setup stays clean and your modules stay easy to find.</p></div>
+    <div class="feature-grid">
+      <article class="feature-card reveal"><span class="feature-icon">⚔</span><span class="feature-label">COMBAT</span><h3>Fast combat tools</h3><p>Configurable combat helpers, target information and timing-focused modules in one place.</p><div class="feature-list"><span>✓ Auto Totem</span><span>✓ Crystal Assist</span><span>✓ Target HUD</span></div></article>
+      <article class="feature-card reveal"><span class="feature-icon">⌘</span><span class="feature-label">AUTOMATION</span><h3>Let repetitive work run</h3><p>Automation tools for building, mining, inventory handling and repeatable workflows.</p><div class="feature-list"><span>✓ Auto Builder</span><span>✓ Area Miner</span><span>✓ Auto Refill</span></div></article>
+      <article class="feature-card reveal"><span class="feature-icon">◉</span><span class="feature-label">VISUALS</span><h3>See what matters</h3><p>Clean overlays and camera utilities that keep information visible without cluttering the screen.</p><div class="feature-list"><span>✓ ESP Overlay</span><span>✓ Freecam</span><span>✓ Entity Info</span></div></article>
+      <article class="feature-card reveal"><span class="feature-icon">↯</span><span class="feature-label">MOVEMENT</span><h3>More control</h3><p>Movement quality-of-life features with individual toggles, keybinds and configuration profiles.</p><div class="feature-list"><span>✓ Smooth Sprint</span><span>✓ Step Assist</span><span>✓ Camera Tools</span></div></article>
+      <article class="feature-card reveal"><span class="feature-icon">▣</span><span class="feature-label">CONFIG</span><h3>One setup, your way</h3><p>Keep your preferred keybinds, module states and visual settings organized in profiles.</p><div class="feature-list"><span>✓ Profiles</span><span>✓ Keybinds</span><span>✓ Presets</span></div></article>
+      <article class="feature-card reveal"><span class="feature-icon">⌁</span><span class="feature-label">UPDATES</span><h3>Built to evolve</h3><p>Use the changelog and release channel to keep your local build and configurations organized.</p><div class="feature-list"><span>✓ Changelog</span><span>✓ Release notes</span><span>✓ Community reports</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="showcase">
+  <div class="wrap">
+    <div class="section-head split reveal" style="display:flex;justify-content:space-between;align-items:flex-end;text-align:left;max-width:100%;gap:40px;"><div><span class="eyebrow-tag">02 / SHOWCASE</span><h2>See Corz <span class="gradient-text">in action.</span></h2></div><p style="max-width:400px;color:#9898b0;">Every module is built for a specific meta. All footage is unedited.</p></div>
+    <div class="tabs" role="tablist"><button class="tab active" data-filter="all">All</button><button class="tab" data-filter="pvp">PvP</button><button class="tab" data-filter="schematics">Schematics</button><button class="tab" data-filter="movement">Movement</button></div>
+    <div class="clip-grid" id="clipGrid">
+      <article class="clip-card reveal" data-category="pvp">
+        <video muted loop playsinline preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240'%3E%3Crect fill='%2312121a' width='400' height='240'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='%236c6c8a' text-anchor='middle' dy='.3em' font-family='monospace'%3E⚔️ PvP%3C/text%3E%3C/svg%3E"><source src="https://www.corz.gg/clips/safeanchor.mp4" type="video/mp4"></video>
+        <div class="clip-overlay"><button class="play-btn" aria-label="Play clip">▶</button><span>PVP</span></div>
+        <div class="clip-info"><b>Safe Anchor</b><small>High-tier crystal fights</small></div>
+      </article>
+      <article class="clip-card reveal" data-category="schematics">
+        <video muted loop playsinline preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240'%3E%3Crect fill='%2312121a' width='400' height='240'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='%236c6c8a' text-anchor='middle' dy='.3em' font-family='monospace'%3E🏗️ Schematics%3C/text%3E%3C/svg%3E"><source src="https://www.corz.gg/clips/autobuilder.mp4" type="video/mp4"></video>
+        <div class="clip-overlay"><button class="play-btn" aria-label="Play clip">▶</button><span>SCHEMATICS</span></div>
+        <div class="clip-info"><b>Auto Builder</b><small>Build anything automatically</small></div>
+      </article>
+      <article class="clip-card reveal" data-category="movement">
+        <video muted loop playsinline preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240'%3E%3Crect fill='%2312121a' width='400' height='240'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='%236c6c8a' text-anchor='middle' dy='.3em' font-family='monospace'%3E🏃 Movement%3C/text%3E%3C/svg%3E"><source src="https://www.corz.gg/clips/autospear.mp4" type="video/mp4"></video>
+        <div class="clip-overlay"><button class="play-btn" aria-label="Play clip">▶</button><span>MOVEMENT</span></div>
+        <div class="clip-info"><b>Auto Spear</b><small>Smooth movement & visuals</small></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" style="background:rgba(8,8,15,0.3);">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow-tag">REVIEWS</span><h2>Loved by players. <span class="gradient-text">Proven by results.</span></h2></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;">
+      <div class="review-card" style="background:#12121a;padding:20px 24px;border-radius:16px;border:1px solid rgba(255,255,255,0.04);"><div style="color:#f59e0b;font-size:1.1rem;letter-spacing:2px;margin-bottom:6px;">★★★★★</div><p style="color:#c8c8e0;font-size:0.9rem;font-weight:400;">"corz on donut smp is crazy good, found 3 stacked bases in my first hour. easiest base finder ever"</p><span style="color:#6c6c8a;font-size:0.8rem;font-family:'JetBrains Mono',monospace;font-weight:500;">@marcus.tv</span></div>
+      <div class="review-card" style="background:#12121a;padding:20px 24px;border-radius:16px;border:1px solid rgba(255,255,255,0.04);"><div style="color:#f59e0b;font-size:1.1rem;letter-spacing:2px;margin-bottom:6px;">★★★★★</div><p style="color:#c8c8e0;font-size:0.9rem;font-weight:400;">"best minecraft client for donutsmp hands down. the base finder is insanely accurate"</p><span style="color:#6c6c8a;font-size:0.8rem;font-family:'JetBrains Mono',monospace;font-weight:500;">@yungkai</span></div>
+      <div class="review-card" style="background:#12121a;padding:20px 24px;border-radius:16px;border:1px solid rgba(255,255,255,0.04);"><div style="color:#f59e0b;font-size:1.1rem;letter-spacing:2px;margin-bottom:6px;">★★★★★</div><p style="color:#c8c8e0;font-size:0.9rem;font-weight:400;">"been using corz for 2 months now, never been detected. devs keep it updated every patch"</p><span style="color:#6c6c8a;font-size:0.8rem;font-family:'JetBrains Mono',monospace;font-weight:500;">@tommyy</span></div>
+      <div class="review-card" style="background:#12121a;padding:20px 24px;border-radius:16px;border:1px solid rgba(255,255,255,0.04);"><div style="color:#f59e0b;font-size:1.1rem;letter-spacing:2px;margin-bottom:6px;">★★★★★</div><p style="color:#c8c8e0;font-size:0.9rem;font-weight:400;">"the ui is so clean and easy to use, found bases within minutes of setting it up"</p><span style="color:#6c6c8a;font-size:0.8rem;font-family:'JetBrains Mono',monospace;font-weight:500;">@jakee</span></div>
+    </div>
+  </div>
+</section>
+
+<section><div class="wrap dashboard-grid"><div class="dashboard-copy reveal"><span class="eyebrow-tag">03 / COMMUNITY</span><h2>A client that feels <span class="gradient-text">alive.</span></h2><p>Join a growing community of serious players who trust Corz.</p><div class="activity-list"><div><span class="activity-icon">↻</span><div><b>Latest build</b><small>v1.0.0 · stable release</small></div><em>now</em></div><div><span class="activity-icon">✦</span><div><b>Community milestone</b><small>1,284 players reached</small></div><em>today</em></div><div><span class="activity-icon">✓</span><div><b>Support status</b><small>Discord community online</small></div><em>24/7</em></div></div></div><div class="dashboard-card reveal"><div class="dash-top"><span>COMMUNITY // LIVE</span><span class="live-pill-sm"><b></b> ONLINE</span></div><div class="online-number"><strong>1,284</strong><span>players in the community</span></div><div class="bars" id="barsContainer"><i style="height:45%"></i><i style="height:62%"></i><i style="height:50%"></i><i style="height:76%"></i><i style="height:58%"></i><i style="height:88%"></i><i style="height:70%"></i><i style="height:96%"></i><i style="height:82%"></i><i style="height:100%"></i><i style="height:91%"></i><i style="height:100%"></i></div><div class="dash-footer"><span>Last 12 updates</span><b>+18.4%</b></div></div></div></section>
+
+<section class="download-section section-alt" id="download"><div class="wrap"><div class="download-box reveal"><div><span class="eyebrow-tag">04 / DOWNLOAD</span><h2>Ready to launch <span class="gradient-text">Corz?</span></h2><p>One-time payment, lifetime access, instant setup.</p></div><div class="download-actions"><a class="btn btn-primary" href="#" id="downloadBtn">Download latest</a><a class="btn btn-ghost" href="#install">Installation guide</a></div></div></div></section>
+
+<section id="install"><div class="wrap"><div class="section-head reveal"><span class="eyebrow-tag">05 / INSTALL</span><h2>Three steps. <span class="gradient-text">That's it.</span></h2></div><div class="steps"><article class="step reveal"><span>01</span><h3>Download</h3><p>Get the current release from our secure servers.</p></article><article class="step reveal"><span>02</span><h3>Install</h3><p>Follow the installation guide and place configs where needed.</p></article><article class="step reveal"><span>03</span><h3>Launch</h3><p>Start Minecraft, open the client UI and configure your modules.</p></article></div></div></section>
+
+<section class="section-alt" id="pricing"><div class="wrap"><div class="section-head reveal"><span class="eyebrow-tag">06 / PRICING</span><h2>Simple, honest <span class="gradient-text">pricing.</span></h2><p>No hidden fees. Pick the plan that works for you.</p></div><div class="pricing-grid"><article class="price-card reveal"><span class="plan-kicker">STARTER</span><h3>Free</h3><div class="price">$0</div><p>For trying the client and joining the community.</p><ul><li>✓ Core visual tools</li><li>✓ Freecam & basic utilities</li><li>✓ Discord community</li><li>✓ Starter configurations</li></ul><a class="btn btn-ghost btn-block" href="#download">Download free</a></article><article class="price-card featured reveal"><div class="popular">MOST POPULAR</div><span class="plan-kicker">PREMIUM</span><h3>Premium</h3><div class="price">$15 <small>once</small></div><p>One payment. No subscription. Lifetime access.</p><ul><li>✓ Full module suite</li><li>✓ Automation tools</li><li>✓ Advanced configurations</li><li>✓ Priority community support</li><li>✓ Future premium updates</li></ul><a class="btn btn-primary btn-block" href="#" id="premiumBtn">Get Premium</a></article></div></div></section>
+
+<section><div class="wrap"><div class="section-head split reveal" style="display:flex;justify-content:space-between;align-items:flex-end;text-align:left;max-width:100%;gap:40px;"><div><span class="eyebrow-tag">07 / CHANGELOG</span><h2>Always know <span class="gradient-text">what changed.</span></h2></div><p style="max-width:400px;color:#9898b0;">Keep this section updated with every release.</p></div><div class="changelog"><article class="release reveal"><div><span class="version">v1.0.0</span><span class="release-date">SEP 2026</span></div><div><h3>Public launch</h3><p>Initial Corz release, new UI, module categories and community dashboard.</p></div><b>Latest</b></article><article class="release reveal"><div><span class="version">v0.9.2</span><span class="release-date">AUG 2026</span></div><div><h3>Performance pass</h3><p>UI cleanup, configuration improvements and visual polish.</p></div></article><article class="release reveal"><div><span class="version">v0.9.0</span><span class="release-date">AUG 2026</span></div><div><h3>Module refresh</h3><p>Updated module organization and new showcase clips.</p></div></article></div></div></section>
+
+<section class="section-alt" id="faq"><div class="wrap"><div class="section-head reveal"><span class="eyebrow-tag">08 / FAQ</span><h2>Questions, <span class="gradient-text">answered.</span></h2></div><div class="faq-list"><details class="faq reveal" open><summary>Is Corz safe to use?</summary><p>Yes, absolutely. Corz uses advanced bypass technology and is updated regularly to stay undetected on all servers.</p></details><details class="faq reveal"><summary>How do I get started after purchase?</summary><p>After purchase, you get instant access. Download the client, launch it, and pick your module – you're ready to go.</p></details><details class="faq reveal"><summary>How often is Corz updated?</summary><p>We ship weekly updates and patch within 24 hours after every Minecraft update.</p></details><details class="faq reveal"><summary>What about anti-cheat detection?</summary><p>Corz uses a bypass-first architecture that works on all major anti-cheat systems.</p></details><details class="faq reveal"><summary>Is there customer support?</summary><p>Yes, our 24/7 support team is available via Discord and email.</p></details></div></div></section>
+
+<section class="final-cta"><div class="wrap cta-box reveal"><div class="cta-rings"></div><span class="pixel-tag">CORZ // READY?</span><h2>Ready to <span class="gradient-text">Dominate?</span></h2><p>Join hundreds of players already using Corz. One-time payment, lifetime access.</p><div class="hero-actions"><a class="btn btn-primary" href="#download">Download Corz</a><a class="btn btn-ghost" href="#" id="ctaDiscord">Join Discord</a></div></div></section>
+
+<footer class="footer"><div class="wrap footer-grid"><div><a class="brand" href="#top"><span class="brand-mark" style="width:40px;height:40px;font-size:1.4rem;">C</span><span>Corz</span></a><p>Built for players who want more control.</p></div><div><b>Product</b><a href="#features">Features</a><a href="#showcase">Showcase</a><a href="#pricing">Pricing</a></div><div><b>Community</b><a href="#" id="footerDiscord">Discord</a><a href="#">GitHub</a></div><div><b>Support</b><a href="#faq">FAQ</a><a href="#">Issues</a></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> Corz. All rights reserved.</span><span>Not affiliated with Mojang Studios or Microsoft.</span></div></footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function createParticles() {
+    const container = document.getElementById('particleContainer');
+    for (let i = 0; i < 30; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDuration = (10 + Math.random() * 20) + 's';
+      p.style.animationDelay = (Math.random() * 15) + 's';
+      p.style.width = (4 + Math.random() * 8) + 'px';
+      p.style.height = p.style.width;
+      container.appendChild(p);
+    }
+  })();
+
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
+
+  document.querySelector('.menu-btn').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
+
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      document.querySelectorAll('.clip-card').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+      });
+    });
+  });
+
+  document.querySelectorAll('.play-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const video = this.closest('.clip-card').querySelector('video');
+      if (video) {
+        if (video.paused) { video.play(); this.textContent = '⏸'; } 
+        else { video.pause(); this.textContent = '▶'; }
+      }
+    });
+  });
+
+  document.querySelectorAll('.clip-card video').forEach(video => {
+    video.addEventListener('mouseenter', () => video.play());
+    video.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; const btn = video.closest('.clip-card').querySelector('.play-btn'); if (btn) btn.textContent = '▶'; });
+    video.addEventListener('play', () => { const btn = video.closest('.clip-card').querySelector('.play-btn'); if (btn) btn.textContent = '⏸'; });
+    video.addEventListener('pause', () => { const btn = video.closest('.clip-card').querySelector('.play-btn'); if (btn) btn.textContent = '▶'; });
+  });
+
+  const endermanContainer = document.getElementById('endermanContainer');
+  const endermanEntity = document.getElementById('endermanEntity');
+  endermanContainer.addEventListener('click', function() {
+    this.classList.add('warp');
+    const randomX = Math.random() * (window.innerWidth - 100);
+    const randomY = Math.random() * (window.innerHeight - 100);
+    this.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    this.style.left = randomX + 'px';
+    this.style.top = randomY + 'px';
+    this.style.right = 'auto';
+    this.style.bottom = 'auto';
+    if (navigator.vibrate) navigator.vibrate(50);
+    setTimeout(() => {
+      this.classList.remove('warp');
+      setTimeout(() => {
+        this.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        this.style.left = 'auto';
+        this.style.right = '40px';
+        this.style.bottom = '120px';
+        this.style.top = 'auto';
+      }, 2000);
+    }, 1000);
+  });
+
+  document.querySelectorAll('#discordNav, #mobileDiscord, #ctaDiscord, #footerDiscord').forEach(el => {
+    el.addEventListener('click', (e) => { e.preventDefault(); alert('Join our Discord: https://discord.gg/corz (Demo)'); });
+  });
+
+  document.getElementById('downloadBtn').addEventListener('click', (e) => { e.preventDefault(); alert('Download coming soon! Check back later.'); });
+  document.getElementById('premiumBtn').addEventListener('click', (e) => { e.preventDefault(); alert('Premium upgrade coming soon! Stay tuned.'); });
+
+  document.querySelectorAll('.bars i').forEach(bar => {
+    bar.style.height = (20 + Math.random() * 80) + '%';
+  });
+</script>
 </body>
-
 </html>
-
-
