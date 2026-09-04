@@ -188,6 +188,70 @@
     .clip-info b { display:block; font-size:1rem; font-weight:700; }
     .clip-info small { color:#80809a; font-size:0.8rem; font-weight:500; }
 
+    /* TUTORIAL SECTION */
+    .tutorial-section {
+      padding: 80px 0;
+      position: relative;
+      z-index: 2;
+      background: radial-gradient(ellipse at center, rgba(108,60,255,0.08) 0%, transparent 70%);
+    }
+    .tutorial-section .section-head h2 {
+      font-size: 2.6rem;
+    }
+    .tutorial-video-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(108,60,255,0.2);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      background: #0a0a12;
+    }
+    .tutorial-video-wrapper:hover {
+      transform: scale(1.01);
+      box-shadow: 0 30px 80px rgba(108,60,255,0.25);
+    }
+    .tutorial-video-wrapper video {
+      width: 100%;
+      display: block;
+      background: #000;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+    .tutorial-video-wrapper .video-caption {
+      padding: 20px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(18,18,26,0.8);
+      backdrop-filter: blur(4px);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .tutorial-video-wrapper .video-caption span {
+      font-weight: 600;
+      color: #c8c8e0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tutorial-video-wrapper .video-caption span small {
+      font-weight: 400;
+      color: #80809a;
+      font-size: 0.85rem;
+    }
+    .tutorial-video-wrapper .video-caption .tut-badge {
+      background: rgba(108,60,255,0.2);
+      padding: 4px 16px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #a855f7;
+      border: 1px solid rgba(108,60,255,0.15);
+    }
+
     .dashboard-grid { display:grid; grid-template-columns:1fr 1fr; gap:50px; padding:80px 0; align-items:center; position:relative; z-index:2; }
     .dashboard-copy h2 { font-size:2.8rem; font-weight:800; line-height:1.15; margin-bottom:16px; }
     .dashboard-copy p { color:#9898b0; font-size:1.05rem; font-weight:400; }
@@ -291,13 +355,13 @@
   <div class="wrap nav">
     <a class="brand" href="#top"><span class="brand-mark">C</span><span>Corz</span><span class="brand-undetected">undetected</span></a>
     <nav class="desktop-nav">
-      <a href="#features">Features</a><a href="#showcase">Showcase</a><a href="#stats">Stats</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+      <a href="#features">Features</a><a href="#showcase">Showcase</a><a href="#tutorial">Tutorial</a><a href="#stats">Stats</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
     </nav>
     <a class="nav-discord" href="#" id="discordNav">Discord</a>
     <button class="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#features">Features</a><a href="#showcase">Showcase</a><a href="#stats">Stats</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#" id="mobileDiscord">Discord</a>
+    <a href="#features">Features</a><a href="#showcase">Showcase</a><a href="#tutorial">Tutorial</a><a href="#stats">Stats</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#" id="mobileDiscord">Discord</a>
   </div>
 </header>
 
@@ -308,7 +372,10 @@
       <div class="eyebrow"><span class="status-dot"></span> Updated for 1.21.11</div>
       <h1>The Ultimate<br><span class="gradient-text">Minecraft Client</span></h1>
       <p class="hero-lead">The most advanced Minecraft client ever engineered. Instant updates, clean UI, and complete control.</p>
-      <div class="hero-actions"><a class="btn btn-primary" href="#download">Download Corz</a><a class="btn btn-ghost" href="#showcase">Watch clips</a></div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#download">Download Corz</a>
+        <a class="btn btn-ghost" href="#tutorial">📺 Tutorial ansehen</a>
+      </div>
       <p class="hero-note">Windows · Java Edition · Check server rules before use</p>
       <div class="hero-mini-stats"><div><strong>4.6</strong><span>on Trustpilot · 147 reviews</span></div><div><strong>48</strong><span>modules</span></div><div><strong>24/7</strong><span>Support</span></div></div>
     </div>
@@ -398,6 +465,28 @@
   </div>
 </section>
 
+<!-- ========== TUTORIAL SECTION ========== -->
+<section class="tutorial-section" id="tutorial">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow-tag">TUTORIAL</span>
+      <h2>So nutzt du Corz – <span class="gradient-text">in 5 Minuten</span></h2>
+      <p>Sieh dir das komplette Einrichtungsvideo an und starte sofort durch.</p>
+    </div>
+    <div class="tutorial-video-wrapper reveal">
+      <video controls playsinline preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1280' height='720'%3E%3Crect fill='%2312121a' width='1280' height='720'/%3E%3Ctext x='50%25' y='50%25' font-size='36' fill='%236c3cff' text-anchor='middle' dy='.3em' font-family='monospace'%3E▶ Tutorial Video%3C/text%3E%3C/svg%3E">
+        <!-- Ersetze die src mit deinem eigenen Video (z.B. tutorial.mp4) -->
+        <source src="https://www.corz.gg/tutorial/corz-setup.mp4" type="video/mp4">
+        Dein Browser unterstützt das Video-Tag nicht.
+      </video>
+      <div class="video-caption">
+        <span>📺 <strong>Corz Client – Setup & erste Schritte</strong> <small>• 5:23 min</small></span>
+        <span class="tut-badge">⭐ Pflicht für alle neuen User</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section-alt" style="background:rgba(8,8,15,0.3);">
   <div class="wrap">
     <div class="section-head reveal"><span class="eyebrow-tag">REVIEWS</span><h2>Loved by players. <span class="gradient-text">Proven by results.</span></h2></div>
@@ -412,7 +501,7 @@
 
 <section><div class="wrap dashboard-grid"><div class="dashboard-copy reveal"><span class="eyebrow-tag">03 / COMMUNITY</span><h2>A client that feels <span class="gradient-text">alive.</span></h2><p>Join a growing community of serious players who trust Corz.</p><div class="activity-list"><div><span class="activity-icon">↻</span><div><b>Latest build</b><small>v1.0.0 · stable release</small></div><em>now</em></div><div><span class="activity-icon">✦</span><div><b>Community milestone</b><small>1,284 players reached</small></div><em>today</em></div><div><span class="activity-icon">✓</span><div><b>Support status</b><small>Discord community online</small></div><em>24/7</em></div></div></div><div class="dashboard-card reveal"><div class="dash-top"><span>COMMUNITY // LIVE</span><span class="live-pill-sm"><b></b> ONLINE</span></div><div class="online-number"><strong>1,284</strong><span>players in the community</span></div><div class="bars" id="barsContainer"><i style="height:45%"></i><i style="height:62%"></i><i style="height:50%"></i><i style="height:76%"></i><i style="height:58%"></i><i style="height:88%"></i><i style="height:70%"></i><i style="height:96%"></i><i style="height:82%"></i><i style="height:100%"></i><i style="height:91%"></i><i style="height:100%"></i></div><div class="dash-footer"><span>Last 12 updates</span><b>+18.4%</b></div></div></div></section>
 
-<section class="download-section section-alt" id="download"><div class="wrap"><div class="download-box reveal"><div><span class="eyebrow-tag">04 / DOWNLOAD</span><h2>Ready to launch <span class="gradient-text">Corz?</span></h2><p>One-time payment, lifetime access, instant setup.</p></div><div class="download-actions"><a class="btn btn-primary" href="#" id="downloadBtn">Download latest</a><a class="btn btn-ghost" href="#install">Installation guide</a></div></div></div></section>
+<section class="download-section section-alt" id="download"><div class="wrap"><div class="download-box reveal"><div><span class="eyebrow-tag">04 / DOWNLOAD</span><h2>Ready to launch <span class="gradient-text">Corz?</span></h2><p>One-time payment, lifetime access, instant setup.</p></div><div class="download-actions"><a class="btn btn-primary" href="#" id="downloadBtn">Download latest</a><a class="btn btn-ghost" href="#tutorial">📺 Tutorial zuerst ansehen</a></div></div></div></section>
 
 <section id="install"><div class="wrap"><div class="section-head reveal"><span class="eyebrow-tag">05 / INSTALL</span><h2>Three steps. <span class="gradient-text">That's it.</span></h2></div><div class="steps"><article class="step reveal"><span>01</span><h3>Download</h3><p>Get the current release from our secure servers.</p></article><article class="step reveal"><span>02</span><h3>Install</h3><p>Follow the installation guide and place configs where needed.</p></article><article class="step reveal"><span>03</span><h3>Launch</h3><p>Start Minecraft, open the client UI and configure your modules.</p></article></div></div></section>
 
@@ -422,9 +511,9 @@
 
 <section class="section-alt" id="faq"><div class="wrap"><div class="section-head reveal"><span class="eyebrow-tag">08 / FAQ</span><h2>Questions, <span class="gradient-text">answered.</span></h2></div><div class="faq-list"><details class="faq reveal" open><summary>Is Corz safe to use?</summary><p>Yes, absolutely. Corz uses advanced bypass technology and is updated regularly to stay undetected on all servers.</p></details><details class="faq reveal"><summary>How do I get started after purchase?</summary><p>After purchase, you get instant access. Download the client, launch it, and pick your module – you're ready to go.</p></details><details class="faq reveal"><summary>How often is Corz updated?</summary><p>We ship weekly updates and patch within 24 hours after every Minecraft update.</p></details><details class="faq reveal"><summary>What about anti-cheat detection?</summary><p>Corz uses a bypass-first architecture that works on all major anti-cheat systems.</p></details><details class="faq reveal"><summary>Is there customer support?</summary><p>Yes, our 24/7 support team is available via Discord and email.</p></details></div></div></section>
 
-<section class="final-cta"><div class="wrap cta-box reveal"><div class="cta-rings"></div><span class="pixel-tag">CORZ // READY?</span><h2>Ready to <span class="gradient-text">Dominate?</span></h2><p>Join hundreds of players already using Corz. One-time payment, lifetime access.</p><div class="hero-actions"><a class="btn btn-primary" href="#download">Download Corz</a><a class="btn btn-ghost" href="#" id="ctaDiscord">Join Discord</a></div></div></section>
+<section class="final-cta"><div class="wrap cta-box reveal"><div class="cta-rings"></div><span class="pixel-tag">CORZ // READY?</span><h2>Ready to <span class="gradient-text">Dominate?</span></h2><p>Join hundreds of players already using Corz. One-time payment, lifetime access.</p><div class="hero-actions"><a class="btn btn-primary" href="#download">Download Corz</a><a class="btn btn-ghost" href="#tutorial">📺 Tutorial ansehen</a></div></div></section>
 
-<footer class="footer"><div class="wrap footer-grid"><div><a class="brand" href="#top"><span class="brand-mark" style="width:40px;height:40px;font-size:1.4rem;">C</span><span>Corz</span></a><p>Built for players who want more control.</p></div><div><b>Product</b><a href="#features">Features</a><a href="#showcase">Showcase</a><a href="#pricing">Pricing</a></div><div><b>Community</b><a href="#" id="footerDiscord">Discord</a><a href="#">GitHub</a></div><div><b>Support</b><a href="#faq">FAQ</a><a href="#">Issues</a></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> Corz. All rights reserved.</span><span>Not affiliated with Mojang Studios or Microsoft.</span></div></footer>
+<footer class="footer"><div class="wrap footer-grid"><div><a class="brand" href="#top"><span class="brand-mark" style="width:40px;height:40px;font-size:1.4rem;">C</span><span>Corz</span></a><p>Built for players who want more control.</p></div><div><b>Product</b><a href="#features">Features</a><a href="#showcase">Showcase</a><a href="#tutorial">Tutorial</a><a href="#pricing">Pricing</a></div><div><b>Community</b><a href="#" id="footerDiscord">Discord</a><a href="#">GitHub</a></div><div><b>Support</b><a href="#faq">FAQ</a><a href="#">Issues</a></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> Corz. All rights reserved.</span><span>Not affiliated with Mojang Studios or Microsoft.</span></div></footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -505,7 +594,25 @@
     el.addEventListener('click', (e) => { e.preventDefault(); alert('Join our Discord: https://discord.gg/corz (Demo)'); });
   });
 
-  document.getElementById('downloadBtn').addEventListener('click', (e) => { e.preventDefault(); alert('Download coming soon! Check back later.'); });
+  // Download-Button mit Tutorial-Hinweis
+  document.getElementById('downloadBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    const tutSection = document.getElementById('tutorial');
+    if (tutSection) {
+      tutSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Kurzer visueller Hinweis
+      const wrapper = tutSection.querySelector('.tutorial-video-wrapper');
+      if (wrapper) {
+        wrapper.style.transition = 'box-shadow 0.4s ease';
+        wrapper.style.boxShadow = '0 0 0 3px #6c3cff, 0 20px 80px rgba(108,60,255,0.4)';
+        setTimeout(() => {
+          wrapper.style.boxShadow = '0 20px 60px rgba(0,0,0,0.6)';
+        }, 2000);
+      }
+    }
+    alert('📺 Bitte sieh dir zuerst das Tutorial an – es führt dich durch den gesamten Setup-Prozess!');
+  });
+
   document.getElementById('premiumBtn').addEventListener('click', (e) => { e.preventDefault(); alert('Premium upgrade coming soon! Stay tuned.'); });
 
   document.querySelectorAll('.bars i').forEach(bar => {
