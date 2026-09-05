@@ -1,2 +1,3 @@
 Put your .mp4 or .webm clips here. Current HTML expects combat-01.mp4, building-01.mp4, movement-01.mp4 and visuals-01.mp4.
 https://www.corz.gg/clips/safeanchor.mp4
+https://github.com/CORZCLIENT/CORZ/blob/main/tutorial%20for%20corz%20client%20-%20ccowanunga%20(1080p).mp4
