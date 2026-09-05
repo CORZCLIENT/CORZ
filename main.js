@@ -1,119 +1,134 @@
-/* =========================================================
-   CORZ WEBSITE — JAVASCRIPT
-   Small vanilla-JS interactions; no framework required.
-   ========================================================= */
+// main.js - All interactive functionality
 
-document.addEventListener("DOMContentLoaded", () => {
-  // ---------- Mobile navigation ----------
-  const menuBtn = document.querySelector(".menu-btn");
-  const mobileMenu = document.querySelector(".mobile-menu");
+// ---- Background particles ----
+(function initCanvas() {
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, particles;
 
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", () => {
-      const open = mobileMenu.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", String(open));
-    });
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
 
-    mobileMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-        menuBtn.setAttribute("aria-expanded", "false");
-      });
+  const count = 120;
+  particles = [];
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.6,
+      vy: (Math.random() - 0.5) * 0.6,
+      r: Math.random() * 1.5 + 0.5,
     });
   }
 
-  // ---------- Scroll reveal ----------
-  const revealItems = document.querySelectorAll(".reveal");
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  revealItems.forEach(item => revealObserver.observe(item));
-
-  // ---------- Animated number counters ----------
-  // Change data-count in HTML to your real verified values.
-  const counters = document.querySelectorAll("[data-count]");
-  const counted = new WeakSet();
-
-  function animateCounter(el) {
-    if (counted.has(el)) return;
-    counted.add(el);
-
-    const target = Number(el.dataset.count || 0);
-    const duration = 1200;
-    const start = performance.now();
-
-    function tick(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(target * eased).toLocaleString();
-
-      if (progress < 1) requestAnimationFrame(tick);
-      else el.textContent = target.toLocaleString();
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = 'rgba(255,255,255,0.15)';
+    for (const p of particles) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
     }
-
-    requestAnimationFrame(tick);
+    ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+    ctx.lineWidth = 0.5;
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 100) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
   }
+  draw();
+})();
 
-  const counterObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        counterObserver.unobserve(entry.target);
+// ---- Toast system ----
+function showToast(msg) {
+  const toast = document.createElement('div');
+  toast.className =
+    'toast fixed bottom-4 right-4 bg-white/10 backdrop-blur-md border border-white/10 rounded-lg px-6 py-3 text-white text-sm z-50 shadow-2xl';
+  toast.innerText = msg;
+  document.body.appendChild(toast);
+  setTimeout(() => { toast.remove(); }, 3500);
+}
+
+// ---- ✅ DIRECT DOWNLOAD (same page, no redirect, no popup) ----
+function downloadApp() {
+  // Your exact raw file URL
+  const downloadUrl = 'https://raw.githubusercontent.com/CORZCLIENT/hides/main/Hides.exe';
+  
+  showToast('🚀 Downloading Hides.exe...');
+
+  // Create a temporary anchor, trigger download, then remove it
+  const link = document.createElement('a');
+  link.href = downloadUrl;
+  link.download = 'Hides.exe';  // forces download instead of opening in browser
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// ---- Editor buttons ----
+function executeScript() {
+  const consoleDiv = document.getElementById('console-log');
+  const time = new Date().toLocaleTimeString();
+  const entry = document.createElement('div');
+  entry.className = 'text-green-400/70 mt-1';
+  entry.innerText = `[${time}] [✓] Script executed successfully (no errors)`;
+  consoleDiv.appendChild(entry);
+  consoleDiv.scrollTop = consoleDiv.scrollHeight;
+  showToast('✅ Script executed! Check the console.');
+}
+
+function clearScript() {
+  const consoleDiv = document.getElementById('console-log');
+  consoleDiv.innerHTML = `
+    <div class="text-white/20">[System]</div>
+    <div class="text-yellow-400/70">[!] Console cleared</div>
+  `;
+  showToast('🧹 Console cleared.');
+}
+
+function saveScript() {
+  showToast('💾 Script saved locally (mock action)');
+}
+
+function openFile() {
+  showToast('📂 File picker opened (mock action)');
+}
+
+// ---- FAQ Accordion ----
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.faq-toggle').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const answer = this.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
+      if (!isOpen) {
+        answer.classList.add('open');
       }
     });
-  }, { threshold: 0.65 });
-
-  counters.forEach(counter => counterObserver.observe(counter));
-
-  // ---------- Clip filtering ----------
-  const tabs = document.querySelectorAll(".tab");
-  const clips = document.querySelectorAll(".clip-card");
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
-
-      const filter = tab.dataset.filter;
-      clips.forEach(card => {
-        const show = filter === "all" || card.dataset.category === filter;
-        card.classList.toggle("is-hidden", !show);
-      });
-    });
   });
-
-  // ---------- Click-to-play videos ----------
-  document.querySelectorAll(".clip-card").forEach(card => {
-    const video = card.querySelector("video");
-    const play = card.querySelector(".play-btn");
-
-    if (!video || !play) return;
-
-    play.addEventListener("click", () => {
-      if (video.paused) {
-        video.play().catch(() => {});
-        play.textContent = "❚❚";
-        card.classList.add("playing");
-      } else {
-        video.pause();
-        play.textContent = "▶";
-        card.classList.remove("playing");
-      }
-    });
-
-    video.addEventListener("ended", () => {
-      play.textContent = "▶";
-      card.classList.remove("playing");
-    });
-  });
-
-  // ---------- Current year ----------
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
 });
+
+// ---- Expose functions to global scope ----
+window.downloadApp = downloadApp;
+window.executeScript = executeScript;
+window.clearScript = clearScript;
+window.saveScript = saveScript;
+window.openFile = openFile;
